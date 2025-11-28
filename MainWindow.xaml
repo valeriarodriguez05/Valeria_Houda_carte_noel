@@ -11,6 +11,8 @@
         WindowStartupLocation="CenterScreen">
 
     <Grid>
+        <!-- Image de fond qui change chaque jour -->
+        <Image x:Name="DailyImage" Stretch="Fill" Opacity="0.85"/>
 
         <!-- IMAGE DE FOND QUI CHANGE CHAQUE JOUR -->
         <Image x:Name="DailyImage"
