@@ -3,17 +3,23 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Valeria_Houda_carte_noel"
         mc:Ignorable="d"
         Title="Carte de Noël" Height="500" Width="400"
         WindowStartupLocation="CenterScreen"
         Background="DarkGreen">
 
     <Grid Margin="20">
+
+        <!-- 3 lignes  -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <!-- Titre -->
             <RowDefinition Height="*"/>
+            <!-- Image + neige -->
             <RowDefinition Height="Auto"/>
+            <!-- Compte à rebours -->
+            <RowDefinition Height="Auto"/>
+            <!-- Footer -->
         </Grid.RowDefinitions>
 
         <!-- Message -->
@@ -24,36 +30,37 @@
                    HorizontalAlignment="Center"
                    Margin="0,10"/>
 
-        <!-- Image -->
-        <Image Grid.Row="1"
-               
-               Stretch="Uniform"
-               Margin="0,20"/>
+        <!-- Zone image + neige -->
+        <Grid Grid.Row="1">
+            <Image x:Name="MainImage"
+                   Stretch="Uniform"
+                   Margin="0,20"/>
+
+            <!-- Neige au-dessus de tout -->
+            <Canvas x:Name="SnowCanvas"
+                    IsHitTestVisible="False"/>
+        </Grid>
 
         <!-- Compte à rebours -->
-        <TextBlock x:Name="CountdownText"
-                   Grid.Row="2"
-                   FontSize="22"
-                   FontWeight="SemiBold"
-                   Foreground="#FFF3E5"
+        <Border Grid.Row="2"
+                Background="#AA000000"
+                CornerRadius="10"
+                Padding="20"
+                Margin="0,20,0,0">
+            <TextBlock x:Name="TB_Countdown"
+                       Text="00 jours 00:00:00"
+                       FontSize="32"
+                       Foreground="Gold"
+                       FontWeight="SemiBold"
+                       HorizontalAlignment="Center"/>
+        </Border>
+
+        <!-- Footer -->
+        <TextBlock Grid.Row="3"
+                   Text="Carte de Noël automatique - C# WPF"
+                   Foreground="White"
                    HorizontalAlignment="Center"
-                   Margin="0,20"/>
-        <!-- CANVAS POUR LA NEIGE (au-dessus de tout) -->
-        <Canvas x:Name="SnowCanvas" IsHitTestVisible="False">
-        </Canvas>
-
-            <!-- Compte à rebours -->
-            <Border Background="#AA000000" CornerRadius="10" Padding="20" Margin="0,20,0,0">
-                <TextBlock x:Name="TB_Countdown" Text="00 jours 00:00:00"
-FontSize="32" Foreground="Gold" FontWeight="SemiBold"
-HorizontalAlignment="Center"/>
-            </Border>
-        </StackPanel>
-
-
-        <!-- Footer en bas -->
-        <TextBlock Text="Carte de Noël automatique - C# WPF" Foreground="White"
-HorizontalAlignment="Center" VerticalAlignment="Bottom"
-Margin="0,0,0,10" Opacity="0.7"/>
+                   Margin="0,10"
+                   Opacity="0.7"/>
     </Grid>
 </Window>
