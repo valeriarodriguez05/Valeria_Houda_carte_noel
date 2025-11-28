@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Windows.Media.Animation;
+using Valeria_Houda_carte_noel.Views;
 
 namespace Valeria_Houda_carte_noel
 {
@@ -31,6 +32,17 @@ namespace Valeria_Houda_carte_noel
             PlayMusic(); // Lance la musique de Noël
         }
 
+        private void BtnOuvrirCartePage_Click(object sender, RoutedEventArgs e)
+        {
+            // Crée la nouvelle fenêtre
+            var cartePage = new CartePage();
+
+            // Affiche la nouvelle fenêtre
+            cartePage.Show();
+
+            // Ferme la fenêtre actuelle
+            this.Close();
+        }
         /// ////////////////////////////////////////////🎄 Compte à rebours + message 🎄////////////////////////////////////////////
 
         private void StartCountdown()

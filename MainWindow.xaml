@@ -11,22 +11,16 @@
         WindowStartupLocation="CenterScreen">
 
     <Grid>
-        <!-- Image de fond qui change chaque jour -->
-        <Image x:Name="DailyImage" Stretch="Fill" Opacity="0.85"/>
-
-        <!-- IMAGE DE FOND QUI CHANGE CHAQUE JOUR -->
         <Image x:Name="DailyImage"
                Stretch="Fill"
                Opacity="0.85"/>
 
-        <!-- EFFETS ET CONTENU AU PREMIER PLAN -->
         <Grid>
-            <!-- Neige au-dessus de tout -->
             <Canvas x:Name="SnowCanvas"
                     IsHitTestVisible="False"
-                    Panel.ZIndex="20" />
+                    Panel.ZIndex="20" 
+                    Background="Transparent"/>
 
-            <!-- Contenu centré -->
             <StackPanel VerticalAlignment="Center"
                         HorizontalAlignment="Center"
                         Panel.ZIndex="10">
@@ -45,22 +39,32 @@
                            Margin="0,10,0,20"
                            HorizontalAlignment="Center"/>
 
-                <!-- Compte à rebours -->
-                <!-- Compte à rebours -->
-                <TextBlock x:Name="CountdownText"
-                   Grid.Row="2"
-                   FontSize="22"
-                   FontWeight="SemiBold"
-                   Foreground="#FFF3E5"
-                   HorizontalAlignment="Center"
-                   Margin="0,20"/>
+                <Border Background="#AA000000"
+                        CornerRadius="10"
+                        Padding="20"
+                        Margin="0,20,0,0">
+                    <TextBlock x:Name="TB_Countdown"
+                               Text="00 jours 00:00:00"
+                               FontSize="32"
+                               Foreground="Gold"
+                               FontWeight="SemiBold"
+                               HorizontalAlignment="Center"/>
+                </Border>
 
+                <!-- ⭐ BOUTON CARTE DU JOUR -->
+                <Button x:Name="BtnCarteDuJour"
+                        Content="Carte du jour"
+                        Width="200"
+                        Height="50"
+                        Margin="0,20,0,0"
+                        FontSize="20"
+                        HorizontalAlignment="Center"
+                        Click="BtnCarteDuJour_Click"/>
 
             </StackPanel>
         </Grid>
 
-        <!-- FOOTER -->
-        <TextBlock Text="Carte de Noël automatique - C# WPF"
+        <TextBlock Text="Carte de Noël - Valeria et Houda"
                    Foreground="White"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Bottom"
@@ -68,5 +72,12 @@
                    Opacity="0.7"
                    Panel.ZIndex="5"/>
 
+        
+        <TextBlock x:Name="CountdownText" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Top" 
+                   FontSize="24" 
+                   Margin="0,20,0,0" 
+                   Text=""/>
     </Grid>
 </Window>
