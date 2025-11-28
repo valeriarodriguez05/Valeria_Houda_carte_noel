@@ -4,63 +4,67 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Carte de Noël" Height="500" Width="400"
-        WindowStartupLocation="CenterScreen"
-        Background="DarkGreen">
+        Title="Carte de Noël"
+        Height="450"
+        Width="800"
+        Background="#1A1A1A"
+        WindowStartupLocation="CenterScreen">
 
-    <Grid Margin="20">
+    <Grid>
 
-        <!-- 3 lignes  -->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <!-- Titre -->
-            <RowDefinition Height="*"/>
-            <!-- Image + neige -->
-            <RowDefinition Height="Auto"/>
-            <!-- Compte à rebours -->
-            <RowDefinition Height="Auto"/>
-            <!-- Footer -->
-        </Grid.RowDefinitions>
+        <!-- IMAGE DE FOND QUI CHANGE CHAQUE JOUR -->
+        <Image x:Name="DailyImage"
+               Stretch="Fill"
+               Opacity="0.85"/>
 
-        <!-- Message -->
-        <TextBlock Text="Joyeux Noël !" 
-                   FontSize="28" 
-                   FontWeight="Bold" 
-                   Foreground="DarkRed"
-                   HorizontalAlignment="Center"
-                   Margin="0,10"/>
-
-        <!-- Zone image + neige -->
-        <Grid Grid.Row="1">
-            <Image x:Name="MainImage"
-                   Stretch="Uniform"
-                   Margin="0,20"/>
-
+        <!-- EFFETS ET CONTENU AU PREMIER PLAN -->
+        <Grid>
             <!-- Neige au-dessus de tout -->
             <Canvas x:Name="SnowCanvas"
-                    IsHitTestVisible="False"/>
+                    IsHitTestVisible="False"
+                    Panel.ZIndex="20" />
+
+            <!-- Contenu centré -->
+            <StackPanel VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Panel.ZIndex="10">
+
+                <TextBlock x:Name="TB_Title"
+                           Text="Joyeux Noël !"
+                           FontSize="48"
+                           Foreground="White"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"/>
+
+                <TextBlock x:Name="TB_Message"
+                           Text="La magie de Noël approche..."
+                           FontSize="24"
+                           Foreground="White"
+                           Margin="0,10,0,20"
+                           HorizontalAlignment="Center"/>
+
+                <!-- Compte à rebours -->
+                <!-- Compte à rebours -->
+                <TextBlock x:Name="CountdownText"
+                   Grid.Row="2"
+                   FontSize="22"
+                   FontWeight="SemiBold"
+                   Foreground="#FFF3E5"
+                   HorizontalAlignment="Center"
+                   Margin="0,20"/>
+
+
+            </StackPanel>
         </Grid>
 
-        <!-- Compte à rebours -->
-        <Border Grid.Row="2"
-                Background="#AA000000"
-                CornerRadius="10"
-                Padding="20"
-                Margin="0,20,0,0">
-            <TextBlock x:Name="TB_Countdown"
-                       Text="00 jours 00:00:00"
-                       FontSize="32"
-                       Foreground="Gold"
-                       FontWeight="SemiBold"
-                       HorizontalAlignment="Center"/>
-        </Border>
-
-        <!-- Footer -->
-        <TextBlock Grid.Row="3"
-                   Text="Carte de Noël automatique - C# WPF"
+        <!-- FOOTER -->
+        <TextBlock Text="Carte de Noël automatique - C# WPF"
                    Foreground="White"
                    HorizontalAlignment="Center"
-                   Margin="0,10"
-                   Opacity="0.7"/>
+                   VerticalAlignment="Bottom"
+                   Margin="0,0,0,10"
+                   Opacity="0.7"
+                   Panel.ZIndex="5"/>
+
     </Grid>
 </Window>
