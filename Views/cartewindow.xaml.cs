@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Valeria_Houda_carte_noel.Views
 {
     /// <summary>
-    /// Logique d'interaction pour CartePage.xaml
+    /// Logique d'interaction pour cartewindow.xaml
     /// </summary>
-    public partial class CartePage : Window
+    public partial class cartewindow : Window
     {
-        public CartePage()
+        public cartewindow()
         {
             InitializeComponent();
         }

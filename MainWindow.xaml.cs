@@ -35,7 +35,7 @@ namespace Valeria_Houda_carte_noel
         private void BtnOuvrirCartePage_Click(object sender, RoutedEventArgs e)
         {
             // Crée la nouvelle fenêtre
-            var cartePage = new CartePage();
+            var cartePage = new cartewindow();
 
             // Affiche la nouvelle fenêtre
             cartePage.Show();
