@@ -93,10 +93,10 @@ namespace Valeria_Houda_carte_noel.Views
             // -------------------------------------
 
             // Affiche l'image de la carte
-            CarteImage.Source = new BitmapImage(new Uri(carte.ImagePath, UriKind.RelativeOrAbsolute));
+         //   CarteImage.Source = new BitmapImage(new Uri(carte.ImagePath, UriKind.RelativeOrAbsolute));
 
             // Affiche le message dans un TextBlock
-            CarteText.Text = carte.Message;
+           // CarteText.Text = carte.Message;
         }
     }
     public class Carte
