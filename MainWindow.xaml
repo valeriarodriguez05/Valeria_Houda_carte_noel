@@ -59,7 +59,7 @@
                         Margin="0,20,0,0"
                         FontSize="20"
                         HorizontalAlignment="Center"
-                        Click="BtnCarteDuJour_Click"/>
+                      Click="BtnOuvrirCartePage_Click"/>
 
             </StackPanel>
         </Grid>
